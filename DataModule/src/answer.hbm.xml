@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="Entity.Answer" schema="botbackend" table="answer">
+        <id name="ansId" type="int">
+            <column name="AnsID"/>
+            <generator class="native"/>
+        </id>
+        <property name="ansContent" type="java.lang.String">
+            <column name="AnsContent"/>
+        </property>
+        <property name="ansGrade" type="java.lang.Double">
+            <column name="AnsGrade"/>
+        </property>
+        <property name="ansSrc" type="java.lang.String">
+            <column name="AnsSrc"/>
+        </property>
+        <many-to-one name="question"  column="Question_QID" />
+    </class>
+</hibernate-mapping>  

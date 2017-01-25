@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="Entity.Question" schema="botbackend" table="question">
+        <id name="qid" type="int">
+            <column name="QID"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="qContent" type="java.lang.String">
+            <column name="QContent"/>
+        </property>
+
+        <property name="qVec" type="java.lang.String">
+            <column name="QVec"/>
+        </property>
+        <set name="answerSet" inverse="true" cascade="save-update">
+            <key column="Question_QID"></key>
+            <one-to-many class="Entity.Answer" />
+        </set>
+    </class>
+
+
+</hibernate-mapping>  
