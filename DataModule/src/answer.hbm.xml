@@ -9,6 +9,7 @@
             <column name="AnsID"/>
             <generator class="native"/>
         </id>
+        <!---->
         <property name="ansContent" type="java.lang.String">
             <column name="AnsContent"/>
         </property>
